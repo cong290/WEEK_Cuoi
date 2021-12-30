@@ -17,18 +17,39 @@ void output_array(int arr[],int n)
 {
     for(int i = 0; i < n; i++)
     {
-        cout<<a[i]<<" ";
+        cout<<arr[i]<<" ";
     }
     cout<<endl;
 }
 
 void find_majorrity_element(int arr[],int n)
 {
-    for(int i = 0;i < n;i++)
+    int arr_logic[100];
+    for(int i = 0; i < n; i++)
     {
-        int count = 0;
-        
+        arr_logic[i] = 0;  
     }
+    for(int i = 0;i <= n/2;i++)
+    {
+        if(arr_logic[i] == 0)
+        {
+            int count = 1;
+            for(int j = i+1; j < n; j++)
+            {
+                if(arr[j] == arr[i])
+                {
+                    count++;
+                    arr_logic[j] = 1;
+                }
+            }
+            if(count > n/2)
+            {
+                cout<<"Phan tu da so la: "<<arr[i];
+                return ;            
+            }
+        }
+   }
+   cout<<"Khong co phan tu da so\n";
 }
 
 int main()
@@ -39,7 +60,7 @@ int main()
     input_array(a,n);
     output_array(a,n);
 
-
+    find_majorrity_element(a, n);
 
     return 0;
 }
