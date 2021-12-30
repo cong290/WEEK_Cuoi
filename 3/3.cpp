@@ -4,7 +4,7 @@ using namespace std;
 
 void input_array_increase(int arr[], int& n)
 {
-	cout << "Nhap so luong phan tu ma tran: ";
+	cout << "Nhap so luong phan tu mang: ";
 	cin >> n;
 	for (int i = 0; i < n; i++)
 	{
