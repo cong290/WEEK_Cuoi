@@ -1,12 +1,19 @@
-#include<iostream>
+﻿#include<iostream>
 
 using namespace std;
 
-void find_max(int arr[], int n)
+// Hàm xuất ra dãy con liên tục
+void output_subarray(int arr[], int num, int index_start)
+{
+	
+}
+
+// Hàm tìm dãy con liên tục có tổng lớn nhất
+void find_subarray_max(int arr[], int n)
 {
 	int max = arr[0];
-	int index_start;
-	int num_elements;
+	int index_start = -1;
+	int num_elements = 0;
 
 	for (int i = 1; i <= n; i++)
 	{
@@ -14,11 +21,10 @@ void find_max(int arr[], int n)
 		{
 			int sum = 0;
 
-			int k;
-			for (k = j; k < j+i; k++)
+			for (int k = j; k < j+i; k++)
 			{
 				
-				sum += arr[k];
+				sum = sum + arr[k];
 			}
 			if (sum > max)
 			{
@@ -29,7 +35,7 @@ void find_max(int arr[], int n)
 			}
 		}
 	}
-
+	// Kiểm tra mảng con rỗng
 	if (max < 0)
 	{
 		cout << "Mang rong\n";
@@ -38,19 +44,17 @@ void find_max(int arr[], int n)
 
 	cout << "max = " << max<<endl;
 	cout << "Day con lien tuc co tong lon nhat: ";
-	int index;
-	for (index = index_start; index <= num_elements+1; index++)
+	for (int index = index_start; index < index_start + num_elements ; index++)
 	{
 		cout << arr[index] << " ";
 	}
 }
 
 int main()
-
 {
 	int a[8] = {-2, -5, 6, -2, -3, 1, 5, -6};
 
-	find_max(a, 8);
+	find_subarray_max(a, 8);
 
 	return 0;
 }

@@ -22,7 +22,7 @@ void output_array(int arr[], int n)
 	cout << endl;
 }
 
-// Thuật toán tìm cặp phần tử arr[i] + arr[j] = key với độ phức tạp về thời gian tùy ý
+// Giải thuật tìm cặp phần tử arr[i] + arr[j] = key với độ phức tạp về thời gian tùy ý
 void find_pair_of_elements(int arr[], int n, int key)
 {
 	bool l = false;
@@ -43,14 +43,14 @@ void find_pair_of_elements(int arr[], int n, int key)
 	}
 }
 
-// Thuật toán tìm cặp phần tử arr[i] + arr[j] = key với độ phức tạp về thời gian là O(n)
+// Giải thuật tìm cặp phần tử arr[i] + arr[j] = key với độ phức tạp về thời gian là O(n)
 void find_pair_of_elements_2(int arr[], int n, int key)
 {
 	int L = 0;
 	int R = n - 1;
 	bool l = false;
 
-	while(L != R)
+	while(L < R)
 	{
 		if (arr[L] + arr[R] == key)
 		{
